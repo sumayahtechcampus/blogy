@@ -14,7 +14,13 @@ mongoose.connection.once('open', () =>{
 // Instantiate Express Application Object
 const app = express();
 // Define PORT for the API to run on
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; 
+/** MIddleware */
+// Add bodyParser middleware which will parse JSON request into  
+// JS object before they  
+
+app.use(express.json());
+
 /*** Routes ***/
 // Mount imported Routes
 app.use(indexRouter);
