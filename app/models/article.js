@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
 
+
+
+const commentShema = new mongoose.Schema({
+  body: String
+}, {timestamps: true});
+
 const articleSchema = new mongoose.Schema({
     title: { type: String, required: true },
     content: String,
@@ -11,5 +17,6 @@ const articleSchema = new mongoose.Schema({
   });
 
 const Article = mongoose.model('Article', articleSchema);
+const Comment = mongoose.model('Comment', commentShema);
 
-module.exports = Article;
+module.exports = {Article, Comment};
